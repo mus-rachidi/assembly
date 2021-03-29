@@ -1,33 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: murachid <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/28 15:14:07 by murachid          #+#    #+#             */
+/*   Updated: 2021/03/28 15:14:09 by murachid         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libasm.h"
 
-int	main()
+int	main(void)
 {
-	int n;
-	int bz = 20;
-	char *s = malloc(10);
-	char *d = malloc(20);
-	printf("================= WRITE FUNC : ================ \n");
-	ft_write(1,"|that's hahahah|\n", 17);
-	write(1,"|that's hahahah|\n", 17);
-	printf("================ READ FUNC : ================= \n");
-	int fd = 0;
-	int fd1 = 0;
-	n = ft_read(fd, s, bz);
-	printf("\n|ASM| ==> |%d| and |%s|\n", n, s);
-	n = read(fd1, s, bz);
-	printf("\n  |C| ==> |%d| and |%s|\n", n, s);
-	close(fd);
-	close(fd);
-	printf("================== STRLEN FUNC ================ \n");
+	int		n;
+	int		bz;
+	char	*s;
+	char	*d;
+
+	bz = 20;
+	s = malloc(10);
+	d = malloc(20);
+	n = ft_write(1, "|that's hahahah|\n", 17);
+	n = ft_read(0, s, bz);
+	n = read(0, s, bz);
+	printf("read |C| ==> |%d| and |%s|\n", n, s);
 	printf("ft_strlen.s ==> |%lu|\n", ft_strlen("hello world"));
-	printf("     strlen ==> |%lu|\n", strlen("hello world"));
-	printf("=================== STRCMP FUNC =============== \n");
 	printf("ft_strcmp.s ==> |%d|\n", ft_strcmp("hello world", "hello world"));
-	printf("	strcmp ==> |%d|\n", strcmp("hello world", "hello world"));
-	printf("=================== STRCPY FUNC =============== \n");
 	printf("ft_strcpy.s ==> |%s|\n", ft_strcpy(d, "hahhahhahha"));
-	printf("	strcpy ==> |%s|\n", strcpy(d, "hahhahhahha"));
-	printf("=================== STRDUP FUNC =============== \n");
 	printf("ft_strdup.s ==> |%s|\n", ft_strdup("hello world its me "));
-	printf("	strdup ==> |%s|\n", strdup("hello world its me "));
+	return (0);
 }

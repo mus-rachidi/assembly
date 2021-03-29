@@ -1,4 +1,3 @@
-
 	section .text
 	global _ft_read:
 	extern ___error
@@ -10,10 +9,9 @@ _ft_read:
 	ret
 
 handle_err:
-	mov rbx, rax
-	push rsp
+	push rax
 	call ___error
-	pop rsp
-	mov [rax], rbx
+	pop rdi
+	mov qword[rax] ,rdi 
 	mov rax, -1
 	ret
